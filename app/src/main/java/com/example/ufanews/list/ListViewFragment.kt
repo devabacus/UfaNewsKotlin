@@ -6,8 +6,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
 
 import com.example.ufanews.R
+import kotlinx.android.synthetic.main.list_view_fragment.*
 
 class ListViewFragment : Fragment() {
 
@@ -27,7 +29,8 @@ class ListViewFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(ListViewViewModel::class.java)
-        // TODO: Use the ViewModel
+        rec_view.layoutManager = LinearLayoutManager(context)
+        rec_view.adapter = NewsAdapter()
     }
 
 }
